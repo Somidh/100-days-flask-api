@@ -4,8 +4,7 @@ import snscrape.modules.twitter as sntwitter
 import pandas as pd
 import os
 
-if __name__ == '__main__':
-    app = Flask(__name__)
+app = Flask(__name__)
 
 
 def get_scraped_data(username: str):
