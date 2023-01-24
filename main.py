@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 def get_scraped_data(username: str):
-    query = f'(#100daysofcode) (from:{username}) until:2023-01-20 since:2018-12-01'
+    query = f'(#100daysofcode) (from:{username})'
     tweets = []
     limit = 5000
     for tweet in sntwitter.TwitterSearchScraper(query).get_items():
