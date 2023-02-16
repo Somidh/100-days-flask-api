@@ -16,7 +16,7 @@ def get_scraped_data(username: str):
             break
         else:
             tweets.append({"date": tweet.date.strftime("%Y-%m-%d %H:%M:%S"),
-                           "username": tweet.user.username, "content": tweet.content, "name": tweet.user.name, "profile_image_url": tweet.user.profile_image_url})
+                           "username": tweet.user.username, "content": tweet.content, "name": tweet.user.displayname, "profile_image_url": tweet.user.profileImageUrl})
     df = pd.DataFrame(tweets)
     return df.to_dict()
 
