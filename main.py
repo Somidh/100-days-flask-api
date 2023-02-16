@@ -16,12 +16,12 @@ def get_scraped_data(username: str):
             break
         else:
             tweets.append({"date": tweet.date.strftime("%Y-%m-%d %H:%M:%S"),
-                           "username": tweet.user.username, "content": tweet.content})
+                           "username": tweet.user.username, "content": tweet.content, "name": tweet.user.name, "profile_image_url": tweet.user.profile_image_url})
     df = pd.DataFrame(tweets)
     return df.to_dict()
 
 
-@app.route('/<username>')
+@ app.route('/<username>')
 def scraper(username):
     data = get_scraped_data(username)
     return jsonify(data)
