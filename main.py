@@ -20,7 +20,6 @@ def get_scraped_data(username: str):
     df = pd.DataFrame(tweets)
     return df.to_dict()
 
-
 @ app.route('/<username>')
 def scraper(username):
     data = get_scraped_data(username)
