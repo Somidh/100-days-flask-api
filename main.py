@@ -5,10 +5,11 @@ import pandas as pd
 import os
 
 app = Flask(__name__)
+#
 
 
 def get_scraped_data(username: str):
-    query = f'(#100daysofcode) (from:{username})'
+    query = f'Claiming my Georli Eth through  @BuidlersTribe ’s faucet -filter:replies'
     tweets = []
     limit = 5000
     for tweet in sntwitter.TwitterSearchScraper(query).get_items():
@@ -21,7 +22,7 @@ def get_scraped_data(username: str):
     return df.to_dict()
 
 
-@app.route('/<username>')
+@ app.route('/<username>')
 def scraper(username):
     data = get_scraped_data(username)
     return jsonify(data)
